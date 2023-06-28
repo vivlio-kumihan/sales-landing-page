@@ -3,21 +3,30 @@
 @charset "UTF-8"
 
 .container
+  position: relative
+  padding: 0 10%
   width: 100%
-  height: 200vh
   margin: 0 auto
-  text-align: center
-.box
-  display: inline-block
-  position: absolute
-  bottom: 10%
-  right: 10%
-  padding: 20px
-  font-size: 30px
-  background-color: #eee
-  &.pin
+  section
+    display: flex
+    justify-content: center
+    align-items: center
+    width: 100%
+    height: 50vh
+    background-color: #eee
+    &:not(:first-of-type)
+      margin-top: 20px
+  .box
+    display: inline-block
+    position: absolute
+    // 上下の位置決めはGSAPにさせるので値は『0』
+    top: 0
+    // 左右はここで位置を決める。
+    right: 0
+    width: 100px
+    height: 100px
     background-color: red
 footer
   width: 100%
-  height:40vh
+  height:60vh
   background-color: #333
