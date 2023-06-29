@@ -1,33 +1,43 @@
-// selector
-  
 @charset "UTF-8"
 
+$col-red: red
+$col-green: green
+$col-blue: blue
+$col-yellow: yellow
+$col-orange: orange
+$col-purple: purple
+$colors: $col-red, $col-green, $col-blue, $col-yellow, $col-orange, $col-purple
+
 .container
-  position: relative
-  padding: 0 10%
-  width: 100%
-  margin: 0 auto
-  section
-    display: flex
-    justify-content: center
-    align-items: center
-    width: 100%
-    height: 50vh
-    background-color: #eee
-    &:not(:first-of-type)
-      margin-top: 20px
-  .box
-    display: inline-block
-    position: absolute
-    // 上下の位置決めはGSAPにさせるので値は『0』
-    top: 0
-    // 左右はここで位置を決める。
-    right: 10%
-    width: 100px
-    height: 100px
+  display: flex
+  flex-direction: column
+  align-items: flex-start
+  justify-content: flex-start
+  width: min(700px, 100%)
+  margin: 0px auto
+  div
+    width: 150px
+    aspect-ratio: 1
     background-color: red
-    opacity: 0
-footer
-  width: 100%
-  height:60vh
-  background-color: #333
+    &.shadow
+      margin-top: -275px
+      background-color: #999
+    &:not(:first-of-type)
+      margin-top: 175px
+    @each $col in $colors
+      $idx: index($colors, $col)
+      &:nth-of-type(#{ $idx })
+        background-color: $col
+    &.wrapper
+      position: relative
+      .inner, .shadow
+        position: absolute
+        top: 50%
+        left: 50%
+        transform: translate(-50%, -50%)
+        margin: 0
+        background-color: $col-orange
+      .shadow
+        width: 140px
+        filter: blur(10px)
+        background-color: rgba(50, 50, 50, 0.5)
