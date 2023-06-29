@@ -1,43 +1,70 @@
 @charset "UTF-8"
 
-$col-red: red
-$col-green: green
-$col-blue: blue
-$col-yellow: yellow
-$col-orange: orange
-$col-purple: purple
-$colors: $col-red, $col-green, $col-blue, $col-yellow, $col-orange, $col-purple
+// WEBフォントのインポート
+// Noto Sans JP
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700;900&display=swap')
+$noto: "Noto Sans JP", sans-serif
 
-.container
-  display: flex
-  flex-direction: column
-  align-items: flex-start
-  justify-content: flex-start
-  width: min(700px, 100%)
-  margin: 0px auto
-  div
-    width: 150px
-    aspect-ratio: 1
-    background-color: red
-    &.shadow
-      margin-top: -275px
-      background-color: #999
-    &:not(:first-of-type)
-      margin-top: 175px
-    @each $col in $colors
-      $idx: index($colors, $col)
-      &:nth-of-type(#{ $idx })
-        background-color: $col
-    &.wrapper
-      position: relative
-      .inner, .shadow
-        position: absolute
-        top: 50%
-        left: 50%
-        transform: translate(-50%, -50%)
-        margin: 0
-        background-color: $col-orange
-      .shadow
-        width: 140px
-        filter: blur(10px)
-        background-color: rgba(50, 50, 50, 0.5)
+$col-blue: blue
+$col-green: #02c202
+$col-orange: orange
+$col-red: red
+$colors: $col-blue, $col-green, $col-orange, $col-red
+// $col-yellow: yellow
+// $col-purple: purple
+// @each $col in $colors
+//   $idx: index($colors, $col)
+//   &:nth-of-type(#{ $idx })
+//     background-color: $col
+
+:root 
+  font-size: 93.75%
+  scroll-behavior: smooth
+  body 
+    font-family: $noto
+    line-height: 1.7
+    color: #fff
+    .container
+      main
+        width: min(900px, 100%)
+        margin: 0 auto
+        .info-anchor
+          position: absolute
+          bottom: 5%
+          right: 5.5%
+          width: 100px
+          height: 100px
+          border-radius: 50%
+          background-color: #fff
+          box-shadow: 3px 3px 3px #333
+          z-index: 1
+        section
+          height: 70vh
+          padding: 100px
+          &.blue
+            background-color: $col-blue
+          &.green
+            background-color: $col-green
+          &.orange
+            background-color: $col-orange
+          h2, h3
+            margin-bottom: 1em
+            line-height: 1
+            text-align: center
+            letter-spacing: .05em
+            text-transform: uppercase
+          h2
+            font-size: 3rem
+            font-weight: 900
+          h3
+            font-size: 2rem
+            font-weight: 700
+            line-height: 1
+      footer
+        display: flex
+        justify-content: center
+        align-items: center
+        height: 100vh
+        font-size: 2rem
+        font-weight: 900
+        background-color: $col-red
