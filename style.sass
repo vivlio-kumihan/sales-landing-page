@@ -1,43 +1,44 @@
 @charset "UTF-8"
 
-// WEBフォントのインポート
-// Noto Sans JP
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700;900&display=swap')
-$noto: "Noto Sans JP", sans-serif
-
-$col-blue: blue
-$col-green: #02c202
-$col-orange: orange
 $col-red: red
-$colors: $col-blue, $col-green, $col-orange, $col-red
-// $col-yellow: yellow
-// $col-purple: purple
-// @each $col in $colors
-//   $idx: index($colors, $col)
-//   &:nth-of-type(#{ $idx })
-//     background-color: $col
+$col-green: green
+$col-blue: blue
+$col-yellow: yellow
+$col-orange: orange
+$col-purple: purple
+// $colors: $col-red, $col-green, $col-blue, $col-yellow, $col-orange, $col-purple
 
-:root 
-  font-size: 93.75%
-  scroll-behavior: smooth
-  body 
-    font-family: $noto
-    line-height: 1.7
-    .container
-      width: min(700px, 100%)
-      margin: 0 auto
-      padding: 50px 0
-      background-color: #eee
-      .box
-        display: flex
-        justify-content: center
-        align-items: center
-        width: 100px
-        height: 100px
-        font-size: 2rem
-        font-weight: 900
-        text-transform: uppercase
-        color: #fff
-        background-color: #999
-        + .box
-          margin-top: 50px
+.container
+  width: min(700px, 100%)
+  margin: 0px auto
+  .box
+    width: 150px
+    aspect-ratio: 1
+    background-color: #999
+    &:not(:first-of-type)
+      margin-top: 175px
+    &.red
+      background-color: $col-red
+    &.green
+      background-color: $col-green
+    &.blue
+      background-color: $col-blue
+    &.yellow
+      background-color: $col-yellow
+    &.purple
+      background-color: $col-purple
+    &.orange
+      background-color: $col-orange
+  
+  .wrapper
+    position: relative
+    width: 150px
+    aspect-ratio: 1
+    margin-top: 175px
+    background-color: #ffa50061
+    .inner, .shadow
+      position: absolute
+      top: 0
+      left: 0
+    .orange
+      margin-top: 0
