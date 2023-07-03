@@ -1,7 +1,7 @@
 @charset "UTF-8"
 
 $col-red: red
-$col-green: green
+$col-green: #6ed06e
 $col-blue: blue
 $col-yellow: yellow
 $col-orange: orange
@@ -12,15 +12,25 @@ $col-purple: purple
   width: min(700px, 100%)
   margin: 0px auto
   .box
-    width: 150px
-    aspect-ratio: 1
-    background-color: #999
+    width: 100%px
+    height: 90vh
+    background-color: #eee
     &:not(:first-of-type)
-      margin-top: 175px
+      margin-top: 50px
+    &.green
+      position: relative
+      background-color: $col-green
+      .pined-box
+        position: absolute
+        bottom: 0
+        left: 0
+        width: 150px
+        aspect-ratio: 1
+        background-color: #fff
+        border: 1px solid #999
+        opacity: 0
     &.red
       background-color: $col-red
-    &.green
-      background-color: $col-green
     &.blue
       background-color: $col-blue
     &.yellow
@@ -29,16 +39,7 @@ $col-purple: purple
       background-color: $col-purple
     &.orange
       background-color: $col-orange
-  
-  .wrapper
-    position: relative
-    width: 150px
-    aspect-ratio: 1
-    margin-top: 175px
-    background-color: #ffa50061
-    .inner, .shadow
-      position: absolute
-      top: 0
-      left: 0
-    .orange
-      margin-top: 0
+footer
+  width: 100%
+  height: 100vh
+  background-color: #999

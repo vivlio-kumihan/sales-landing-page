@@ -237,23 +237,38 @@
 //   duration: 3,
 // })
 
-
-// #10
-// timelineを入れてみる。
-const tl = gsap.timeline({
+// あるセクションをきっかけに画面上下の任意の位置でpinし、
+// 任意のセクション（フッターの前の大きなセクション.container）に
+// 最初にpinした位置でくっつく動き
+gsap.to('.pined-box', {
   scrollTrigger: {
-    trigger: '#purple',
-    start: 'top center',
-    end: 'bottom 200px',
-    scrub: true,
+    trigger: '.pined-box',
+    start: 'center 90%',
+    endTrigger: '.container',
+    end: 'bottom bottom',
+    pin: true,
     markers: true
-  }
+  },
+  opacity: 1,
+  x: 550
 })
 
-tl.to('#purple', {
-  x: 550,
-  rotation: 360,
-  duration: 3 })
-  .to('#purple', { y: 200 })
-  .to('#purple', { x: 0, rotation: -180, backgroundColor: 'red' })
-  .to('#purple', { y: 0 })
+// // #10
+// // timelineを入れてみる。
+// const tl = gsap.timeline({
+//   scrollTrigger: {
+//     trigger: '#purple',
+//     start: 'top center',
+//     end: 'bottom 200px',
+//     scrub: true,
+//     markers: true
+//   }
+// })
+
+// tl.to('#purple', {
+//   x: 550,
+//   rotation: 360,
+//   duration: 3 })
+//   .to('#purple', { y: 200 })
+//   .to('#purple', { x: 0, rotation: -180, backgroundColor: 'red' })
+//   .to('#purple', { y: 0 })
