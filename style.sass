@@ -1,9 +1,5 @@
 @charset "UTF-8"
 
-// Font Jost
-@import url('https://fonts.googleapis.com/css2?family=Jost:wght@500;600&display=swap')
-$jost: "Jost", sans-serif
-
 // color
 $col-red: #be2020
 $col-green: #6ed06e
@@ -13,53 +9,48 @@ $col-orange: orange
 $col-purple: #611c61
 
 
-body
-  font-family: $jost
-  font-size: 30px
-  font-weight: 900
-  letter-spacing: .1em
-  color: #fff
-  text-transform: uppercase
+#container
+  width: 100%
+  // これは100％じゃないといけない。
+  // 多分、end: "+=700%"と対応している。
+  height: 100% 
+  position: absolute
+  top: 0
+  left: 0
+  overflow: hidden
 
-.box, footer
+.panel
   display: flex
-  justify-content: center
+  flex-direction: column
   align-items: center
-
-.container
-  position: relative
+  justify-content: center
+  position: absolute
   width: 100%
-  margin: 0px auto
-  .box
-    width: 100%
-    height: 100vh
-    background-color: #eee
-    &.red
-      position: relative
-      background-color: $col-red
-      .pin-item.red
-        right: 10%
-    &.blue
-      position: relative
-      background-color: $col-blue
-    &.yellow
-      background-color: $col-yellow
-      .pin-item.yellow
-        width: 200px
-        padding: 200px 0
-        text-align: center
-        background-color: #999
-        opacity: .5
-    &.purple
-      background-color: $col-purple
-    .pin-item
-      position: absolute
-      top: 50%
-      left: 50%
-      transform: translate(-50%, -50%)
-
-footer
-  width: 100%
-  height: 50vh
+  height: 100vh
+  padding: 0 20%
+  font-size: 30px
+  font-weight: bold
+  text-align: center
   color: #fff
-  background-color: #333
+  will-change: transform
+  p
+    margin-top: 40px
+    font-size: 15px
+    line-height: 2
+    text-align: justify
+  &:nth-of-type(1)
+    background-color: $col-blue
+  &:nth-of-type(2)
+    background-color: $col-red
+  &:nth-of-type(3)
+    background-color: $col-orange
+  &:nth-of-type(4)
+    background-color: $col-purple
+  &:nth-of-type(5)
+    background-color: $col-blue
+  &:nth-of-type(6)
+    background-color: $col-red
+  &:nth-of-type(7)
+    background-color: $col-orange
+  &:nth-of-type(8)
+    background-color: $col-purple
