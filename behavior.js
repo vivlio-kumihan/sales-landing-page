@@ -1,46 +1,24 @@
-// #03
-
-// 下のレイヤーほど値を高くしていく。
-gsap.set(".panel", { 
-  // 複数の要素を包含する親要素に対して、
-  // zIndex属性になんでもいいので任意の変数『idx』『value』『array』
-  // で呼び出したら該当する値が返る！！！
-  // zIndex: (idx, value, array) => { 
-  //   console.log(`index${ idx }番目`, value, array) 
-  // }
-  // この特性を活かして、z-indexに然るべき値を代入していく。
-
-  // なんで{}でくくるとダメなのか？
-  // 『return』をつけて解決する。
-  zIndex: (idx, value, array) => { 
-    return array.length - idx 
-  }
-  // zIndex: (idx, value, array) => array.length - idx
+// #04
+// 上下左右からレイヤーが覆い被さるようにページを展開していく
+gsap.defaults({
+  ease: 'none',
+  duration: 2,
 })
 
-gsap.to(".panel:not(:last-child)", {
-  yPercent: -100, 
-  ease: "none",
-  // レイヤーを上へ繰っていく感覚でしっくりする『値』を『stagger』に設定しているとしか説明できない。
-  // 『stagger』って配列に格納されている値を順に出力するタイミングを調整するための属性だとしか見てなかった。
-  stagger: .5,
-  scrollTrigger: {
-    trigger: "#container",
-    start: "top top",
-    // top pageは表示されている。
-    // その後に100vhあるセクション何枚分がendの位置。
-    // "(.panel - 1) × 100%"を自動で入れたい。
-    end: `+=${gsap.utils.toArray('.panel').length - 1 }00%`,
-    scrub: true,
-    pin: true,
-    markers: true
-  }
+const tl = gsap.timeline()
+tl.from('.red', { xPercent: 100 })
+tl.from('.orange', { xPercent: -100 })
+tl.from('.purple', { yPercent: -100 })
+
+ScrollTrigger.create({
+  animation: tl,
+  trigger: '.container',
+  start: 'top top',
+  end: `+=${gsap.utils.toArray('.panel').length}000`,
+  scrub: true,
+  pin: true,
+  anticipatePin: 1
 })
-
-
-
-
-
 
 // // #01
 // // 前回のコミットでやっていることを復習
@@ -79,4 +57,42 @@ gsap.to(".panel:not(:last-child)", {
 //   end: '+=300',
 //   pin: '.pin-item.yellow',
 //   // markers: true
+// })
+
+// // #03
+// // 下のレイヤーほど値を高くしていく。
+// gsap.set(".panel", {
+//   // 複数の要素を包含する親要素に対して、
+//   // zIndex属性になんでもいいので任意の変数『idx』『value』『array』
+//   // で呼び出したら該当する値が返る！！！
+//   // zIndex: (idx, value, array) => { 
+//   //   console.log(`index${ idx }番目`, value, array) 
+//   // }
+//   // この特性を活かして、z-indexに然るべき値を代入していく。
+
+//   // なんで{}でくくるとダメなのか？
+//   // 『return』をつけて解決する。
+//   zIndex: (idx, value, array) => {
+//     return array.length - idx
+//   }
+//   // zIndex: (idx, value, array) => array.length - idx
+// })
+
+// gsap.to(".panel:not(:last-child)", {
+//   yPercent: -100,
+//   ease: "none",
+//   // レイヤーを上へ繰っていく感覚でしっくりする『値』を『stagger』に設定しているとしか説明できない。
+//   // 『stagger』って配列に格納されている値を順に出力するタイミングを調整するための属性だとしか見てなかった。
+//   stagger: .5,
+//   scrollTrigger: {
+//     trigger: "#container",
+//     start: "top top",
+//     // top pageは表示されている。
+//     // その後に100vhあるセクション何枚分がendの位置。
+//     // "(.panel - 1) × 100%"を自動で入れたい。
+//     end: `+=${gsap.utils.toArray('.panel').length - 1}00%`,
+//     scrub: true,
+//     pin: true,
+//     markers: true
+//   }
 // })
