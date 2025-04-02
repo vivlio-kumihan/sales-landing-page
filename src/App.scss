@@ -1,0 +1,85 @@
+// カラー変数
+$col-red: #be2020;
+$col-green: #6ed06e;
+$col-blue: #1c1ca6;
+$col-yellow: #ccb200;
+$col-orange: orange;
+$col-purple: #611c61;
+
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  background-color: #f0f0f0; /* 確認用の背景色 */
+}
+
+#container {
+  width: 100%;
+  // これは100％じゃないといけない。
+  // 多分、end: "+=700%"と対応している。
+  height: 100%;
+  position: relative; /* absoluteからrelativeに変更 */
+  overflow: hidden;
+  min-height: 100vh; /* 最小高さを指定 */
+}
+
+.panel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative; /* absoluteからrelativeに変更 */
+  width: 100%;
+  height: 100vh;
+  padding: 0 20%;
+  font-size: 30px;
+  font-weight: bold;
+  text-align: center;
+  color: #fff;
+  will-change: transform;
+  z-index: 1; /* z-indexを追加 */
+  
+  p {
+    margin-top: 40px;
+    font-size: 15px;
+    line-height: 2;
+    text-align: justify;
+  }
+  
+  &:nth-of-type(1) {
+    background-color: $col-blue;
+  }
+  
+  &:nth-of-type(2) {
+    background-color: $col-red;
+  }
+  
+  &:nth-of-type(3) {
+    background-color: $col-orange;
+  }
+  
+  &:nth-of-type(4) {
+    background-color: $col-purple;
+  }
+  
+  &:nth-of-type(5) {
+    background-color: $col-blue;
+  }
+  
+  &:nth-of-type(6) {
+    background-color: $col-red;
+  }
+  
+  &:nth-of-type(7) {
+    background-color: $col-orange;
+  }
+  
+  &:nth-of-type(8) {
+    background-color: $col-purple;
+  }
+}
