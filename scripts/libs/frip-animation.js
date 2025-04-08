@@ -17,5 +17,3 @@ ScrollTrigger.create({
   pin: true,
   anticipatePin: 1,
 });
-
-console.log("hello");

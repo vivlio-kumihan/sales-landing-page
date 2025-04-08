@@ -1,3 +1,4 @@
+@charset "UTF-8";
 .appear.up .item {
   transform: translateY(6px);
 }
@@ -645,12 +646,18 @@
 }
 
 body {
-  font-family: "Kameron", "Noto Sans JP", sans-serif;
+  font-size: 93.75%;
+  font-family: "Cormorant Garamond", "Noto Serif JP", serif;
 }
 
 img {
   max-width: 100%;
   vertical-align: bottom;
+}
+
+a {
+  text-decoration: none;
+  color: #333;
 }
 
 .mb-sm, .travel__img, .houses__title, .popular__title, .sub-title {
@@ -701,38 +708,29 @@ img {
 }
 
 .font-sm, .sub-title {
-  font-size: 14px;
+  font-size: 15px;
 }
 @media screen and (min-width: 1024px) {
   .font-sm, .sub-title {
-    font-size: 16px;
+    font-size: 24px;
   }
 }
 
 .font-md, .popular__title {
-  font-size: 17px;
+  font-size: 24px;
 }
 @media screen and (min-width: 1024px) {
   .font-md, .popular__title {
-    font-size: 19px;
+    font-size: 30px;
   }
 }
 
-.font-lr, .houses__title {
-  font-size: 17px;
+.font-lg, .houses__title, .main-title {
+  font-size: 28px;
 }
 @media screen and (min-width: 1024px) {
-  .font-lr, .houses__title {
-    font-size: 23px;
-  }
-}
-
-.font-lg, .main-title {
-  font-size: 25px;
-}
-@media screen and (min-width: 1024px) {
-  .font-lg, .main-title {
-    font-size: 36px;
+  .font-lg, .houses__title, .main-title {
+    font-size: 50px;
   }
 }
 
@@ -780,12 +778,11 @@ main {
   position: absolute;
   width: 100%;
   height: 100vh;
-  padding: 0 20%;
   will-change: transform;
 }
 .panel.intro {
   background-color: unset;
-  background-image: url("../images/bg_1_lg.jpg");
+  background-image: url("../images/bg_1_sm.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -795,17 +792,21 @@ main {
 }
 .panel.call-to-action {
   background-color: unset;
-  background-image: url("../images/bg_3_lg.jpg");
+  background-image: url("../images/bg_3_sm.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: scroll;
   background-clip: border-box;
   color: inherit;
+  justify-content: flex-start;
+}
+.panel.call-to-action > .catch.font-lg, .panel.call-to-action > .catch.houses__title {
+  line-height: 1.25;
 }
 .panel.case-studies {
   background-color: unset;
-  background-image: url("../images/bg_4_lg.jpg");
+  background-image: url("../images/bg_4_sm.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -815,13 +816,181 @@ main {
 }
 .panel.contact {
   background-color: unset;
-  background-image: url("../images/bg_2_lg.jpg");
+  background-image: url("../images/bg_2_sm.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: scroll;
   background-clip: border-box;
   color: inherit;
+  justify-content: flex-start;
+}
+.panel.contact > .catch.font-md, .panel.contact > .catch.popular__title {
+  margin-top: 190px;
+}
+
+.wrapper {
+  position: relative;
+}
+.wrapper::after {
+  background-color: unset;
+  background-image: url("../images/cross-line-red.png");
+  background-size: 125%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-clip: border-box;
+  color: inherit;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  content: "";
+  width: 300px;
+  height: 300px;
+  z-index: -1;
+}
+.wrapper__inner {
+  margin: 2em 0;
+}
+
+.catch-en {
+  font-family: "Cormorant Garamond", serif;
+}
+.catch-en__lg {
+  position: relative;
+  font-size: 90px;
+  line-height: 1;
+  color: #999;
+}
+.catch-en__lg.focus {
+  margin: 90px 0 15px;
+  font-size: 230px;
+  font-weight: 900;
+  line-height: 0.7;
+}
+.catch-en__lg > .catch-inner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 18px;
+  font-weight: 700;
+  color: #333;
+}
+.catch-en__md {
+  font-size: 55px;
+  line-height: 0.65;
+  color: #999;
+}
+
+.catch, .copy {
+  font-family: "Noto Serif JP", serif;
+  line-height: 1;
+  font-weight: 900;
+  text-align: center;
+}
+.catch.font-md, .catch.popular__title, .copy.font-md, .copy.popular__title {
+  margin-bottom: 0.5em;
+}
+
+.copy {
+  margin-top: 1em;
+  line-height: 1.7;
+}
+
+.company-name {
+  margin-top: 2em;
+  font-family: "Cormorant Garamond", serif;
+  line-height: 1;
+}
+
+.my-list {
+  margin: 1.5em 1em;
+  padding-inline-start: unset;
+  padding: 1.5em 1em;
+  list-style-type: none;
+  font-family: "Noto Serif JP", serif;
+  font-weight: 900;
+  border: 1px solid #333;
+}
+.my-list > li {
+  position: relative;
+  padding-left: 1.25em;
+  font-size: 0.9em;
+  line-height: 1.5;
+  text-align: left;
+}
+.my-list > li:not(:first-of-type) {
+  margin-top: 0.25em;
+}
+.my-list > li::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: "●";
+  color: #142A5D;
+}
+
+.links-wrapper {
+  display: flex;
+  gap: 1em;
+  padding: 1.5em 1em 0;
+}
+.links-wrapper a {
+  text-decoration: none;
+  color: #333;
+}
+.links-wrapper span {
+  display: block;
+  margin-bottom: 0.25em;
+  font-family: "Noto sans JP", sans-serif;
+  font-size: 0.85em;
+  font-weight: 900;
+  text-align: center;
+}
+
+.contact-wrapper {
+  text-align: center;
+}
+.contact-wrapper > .title {
+  position: relative;
+  margin: 75px 0 0.5em;
+  font-family: "Noto sans JP", sans-serif;
+  font-size: 0.85em;
+  line-height: 1;
+  font-weight: 900;
+}
+.contact-wrapper > .title::before {
+  background-color: unset;
+  background-image: url("../images/icon-form.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-clip: border-box;
+  color: inherit;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-30%, -140%);
+  width: 45px;
+  height: 45px;
+  content: "";
+}
+.contact-wrapper > .title.tel-number::before {
+  background-color: unset;
+  background-image: url("../images/icon-telphone.png");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-clip: border-box;
+  color: inherit;
+  transform: translate(-50%, -140%);
+}
+.contact-wrapper .catch-en__md > a {
+  color: #999;
 }
 
 .travel__inner {

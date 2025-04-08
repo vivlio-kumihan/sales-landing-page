@@ -1,3 +1,7 @@
+```css
+  font-feature-settings: "palt";
+```
+
 # 教習ページをWEB制作の土台とするための覚書
 
 ## ローダーを止める
