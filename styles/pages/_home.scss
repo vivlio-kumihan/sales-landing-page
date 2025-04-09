@@ -18,17 +18,6 @@ main {
   z-index: -1;
 }
 
-.frip-container {
-  width: 100vw;
-  // これは100％じゃないといけない。
-  // 多分、end: "+=700%"と対応している。
-  height: 100vh;
-  position: absolute;
-  top: 0;
-  left: 0;
-  overflow: hidden;
-}
-
 .panel {
   display: flex;
   flex-direction: column;
@@ -39,6 +28,9 @@ main {
   will-change: transform;
   &.intro {
     @include bg($image: "../images/bg_1_sm.jpg");
+    @include mq(lg) {
+      @include bg($image: "../images/bg_1_lg.png");
+    }
   }
   &.call-to-action {
     @include bg($image: "../images/bg_3_sm.jpg");
@@ -47,16 +39,29 @@ main {
     & .catch.font-lg {
       line-height: 1.25;
     }
+    @include mq(lg) {
+      @include bg($image: "../images/bg_3_lg.png");
+      justify-content: center;
+      padding-top: unset;
+    }    
   }
   &.case-studies {
     @include bg($image: "../images/bg_4_sm.jpg");
     justify-content: flex-start;
     padding-top: 5vh;
+    @include mq(lg) {
+      @include bg($image: "../images/bg_4_lg.jpg");
+    }     
   }
   &.contact {
     @include bg($image: "../images/bg_2_sm.jpg");
     justify-content: flex-start;
     padding-top: 18vh;
+    @include mq(lg) {
+      @include bg($image: "../images/bg_2_lg.png");
+      justify-content: center; 
+      padding-top: unset;
+    }     
   }
 }
 
@@ -164,7 +169,17 @@ main {
 .links-wrapper {
   display: flex;
   gap: 1em;
+  width: 100%;
+  height: 80vh;
+  overflow: hidden;
+  margin: 0 auto;
   padding: 1.5em 1em 0;
+  // マスクによるグラデーション透過効果
+  mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
+  @include mq(lg) {
+    width: 55%;
+  }
+  
   & a {
     text-decoration: none;
     color: #333;
@@ -178,6 +193,33 @@ main {
     text-align: center;
   }
 }
+
+// .links-wrapper {
+//   display: flex;
+//   gap: 1em;
+//   width: 55%;
+//   height: 80vh;
+//   overflow: hidden;
+//   margin: 0 auto;
+//   padding: 1.5em 1em 0;
+//   position: relative; // 位置指定を追加
+  
+//   // マスクによるグラデーション透過効果
+//   mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
+  
+//   & a {
+//     text-decoration: none;
+//     color: #333;
+//   } 
+//   & span {
+//     display: block;
+//     margin-bottom: .25em;
+//     font-family: "Noto sans JP", sans-serif;
+//     font-size: .85em;
+//     font-weight: 900;
+//     text-align: center;
+//   }
+// }
 
 .contact-wrapper {
   text-align: center;
