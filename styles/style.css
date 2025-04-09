@@ -957,6 +957,7 @@ main {
   list-style-type: none;
   font-family: "Noto Serif JP", serif;
   font-weight: 900;
+  background-color: rgba(255, 255, 255, 0.7);
   border: 1px solid #333;
 }
 .my-list > li {
@@ -985,11 +986,12 @@ main {
   overflow: hidden;
   margin: 0 auto;
   padding: 1.5em 1em 0;
-  -webkit-mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
-          mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, black 40%, transparent 100%);
+          mask-image: linear-gradient(to bottom, black 40%, transparent 100%);
 }
 @media screen and (min-width: 1024px) {
   .links-wrapper {
+    gap: 3em;
     width: 55%;
   }
 }
