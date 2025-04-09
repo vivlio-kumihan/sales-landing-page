@@ -34,7 +34,6 @@ main {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  position: absolute;
   width: 100%;
   height: 100vh;
   will-change: transform;
@@ -44,19 +43,20 @@ main {
   &.call-to-action {
     @include bg($image: "../images/bg_3_sm.jpg");
     justify-content: flex-start;
-    & > .catch.font-lg {
+    padding-top: 10vh;
+    & .catch.font-lg {
       line-height: 1.25;
     }
   }
   &.case-studies {
     @include bg($image: "../images/bg_4_sm.jpg");
+    justify-content: flex-start;
+    padding-top: 5vh;
   }
   &.contact {
     @include bg($image: "../images/bg_2_sm.jpg");
     justify-content: flex-start;
-    & > .catch.font-md {
-      margin-top: 190px;
-    }
+    padding-top: 18vh;
   }
 }
 
@@ -87,9 +87,10 @@ main {
     position: relative;
     font-size: 90px;
     line-height: 1;
+    text-align: center;
     color: #999;
     &.focus {
-      margin: 90px 0 15px;
+      margin-bottom: 15px;
       font-size: 230px;
       font-weight: 900;
       line-height: 0.7;
@@ -130,6 +131,7 @@ main {
   margin-top: 2em;
   font-family: "Cormorant Garamond", serif;
   line-height: 1;
+  text-align: center;
 }
 
 .my-list {
