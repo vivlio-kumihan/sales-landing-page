@@ -9,10 +9,15 @@
   opacity: 0;
 }
 
+.pace-running #global-container {
+  opacity: 0;
+  visibility: hidden;
+}
+
 .pace {
   z-index: 2000;
   // ローダを無効にする。
-  display: none;
+  // display: none;
   position: fixed;
   margin: auto;
   top: 0;
