@@ -94,6 +94,9 @@ main {
     line-height: 1;
     text-align: center;
     color: #999;
+    @include mq(lg) {
+      font-size: calc(90px * 1.8);
+    }
     &.focus {
       margin-bottom: 15px;
       font-size: 230px;
@@ -108,12 +111,18 @@ main {
       font-size: 18px;
       font-weight: 700;
       color: #333;
+      @include mq(lg) {
+        font-size: calc(18px * 1.5);
+      }
     }
   }
   &__md {
     font-size: 55px;
     line-height: .65;
     color: #999;
+    @include mq(lg) {
+      font-size: calc(55px * 1.4);
+    }
   }
 }
 
@@ -248,6 +257,12 @@ main {
         $size: contain
         );      
         transform: translate(-50%, -140%);
+    }
+    &.my-name {
+      margin: 15px 0 0;
+    }
+    &.my-name::before {
+      position: unset;
     }
   }
   & .catch-en__md > a {

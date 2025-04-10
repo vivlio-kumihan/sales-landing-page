@@ -907,6 +907,11 @@ main {
   text-align: center;
   color: #999;
 }
+@media screen and (min-width: 1024px) {
+  .catch-en__lg {
+    font-size: 162px;
+  }
+}
 .catch-en__lg.focus {
   margin-bottom: 15px;
   font-size: 230px;
@@ -922,10 +927,20 @@ main {
   font-weight: 700;
   color: #333;
 }
+@media screen and (min-width: 1024px) {
+  .catch-en__lg > .catch-inner {
+    font-size: 27px;
+  }
+}
 .catch-en__md {
   font-size: 55px;
   line-height: 0.65;
   color: #999;
+}
+@media screen and (min-width: 1024px) {
+  .catch-en__md {
+    font-size: 77px;
+  }
 }
 
 .catch, .copy {
@@ -1046,6 +1061,12 @@ main {
   background-clip: border-box;
   color: inherit;
   transform: translate(-50%, -140%);
+}
+.contact-wrapper > .title.my-name {
+  margin: 15px 0 0;
+}
+.contact-wrapper > .title.my-name::before {
+  position: unset;
 }
 .contact-wrapper .catch-en__md > a {
   color: #999;
