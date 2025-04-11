@@ -660,20 +660,20 @@ a {
   color: #333;
 }
 
-.mb-sm, .travel__img, .houses__title, .popular__title, .sub-title {
+.mb-sm, .sub-title {
   margin-bottom: 16px !important;
 }
 
-.mb-lg, .travel, .houses, .popular__btn {
+.mb-lg {
   margin-bottom: 80px !important;
 }
 @media screen and (min-width: 1024px) {
-  .mb-lg, .travel, .houses, .popular__btn {
+  .mb-lg {
     margin-bottom: 150px !important;
   }
 }
 
-.pb-sm, .travel__texts {
+.pb-sm {
   padding-bottom: 16px !important;
 }
 
@@ -686,18 +686,18 @@ a {
   }
 }
 
-.content-width, .travel, .houses, .popular__header, .popular__container, .footer {
+.content-width {
   width: 90%;
   margin: 0 auto;
   max-width: 1070px;
 }
 
-.flex, .travel__inner, .houses__inner, .popular__container, .footer__nav, .footer__ul {
+.flex {
   display: flex;
   flex-direction: column;
 }
 @media screen and (min-width: 768px) {
-  .flex, .travel__inner, .houses__inner, .popular__container, .footer__nav, .footer__ul {
+  .flex {
     flex-direction: row;
     flex-wrap: wrap;
   }
@@ -716,20 +716,20 @@ a {
   }
 }
 
-.font-md, .popular__title {
+.font-md {
   font-size: 24px;
 }
 @media screen and (min-width: 1024px) {
-  .font-md, .popular__title {
+  .font-md {
     font-size: 30px;
   }
 }
 
-.font-lg, .houses__title, .main-title {
+.font-lg, .main-title {
   font-size: 28px;
 }
 @media screen and (min-width: 1024px) {
-  .font-lg, .houses__title, .main-title {
+  .font-lg, .main-title {
     font-size: 50px;
   }
 }
@@ -779,6 +779,8 @@ main {
   background-attachment: scroll;
   background-clip: border-box;
   color: inherit;
+  justify-content: flex-start;
+  padding-top: 10vh;
 }
 @media screen and (min-width: 1024px) {
   .panel.intro {
@@ -790,6 +792,7 @@ main {
     background-attachment: scroll;
     background-clip: border-box;
     color: inherit;
+    padding-top: 10vh;
   }
 }
 .panel.call-to-action {
@@ -804,7 +807,7 @@ main {
   justify-content: flex-start;
   padding-top: 10vh;
 }
-.panel.call-to-action .catch.font-lg, .panel.call-to-action .catch.houses__title {
+.panel.call-to-action .catch.font-lg {
   line-height: 1.25;
 }
 @media screen and (min-width: 1024px) {
@@ -872,6 +875,17 @@ main {
   }
 }
 
+.logo-lg {
+  font-size: 1.4em;
+  vertical-align: 22px;
+}
+
+.logo-sm {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 0.7em;
+  vertical-align: -7px;
+}
+
 .wrapper {
   position: relative;
 }
@@ -895,6 +909,15 @@ main {
 }
 .wrapper__inner {
   margin: 2em 0;
+}
+
+.panel.intro .wrapper__inner {
+  margin: 2em 0;
+}
+@media screen and (min-width: 1024px) {
+  .panel.intro .wrapper__inner {
+    margin: 3em 0 2em;
+  }
 }
 
 .catch-en {
@@ -922,14 +945,19 @@ main {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 18px;
+  transform: translate(-50%, 350%);
+  width: 100%;
+  font-size: 15px;
   font-weight: 700;
   color: #333;
 }
+.catch-en__lg > .catch-inner > span {
+  font-size: 1.2em;
+}
 @media screen and (min-width: 1024px) {
   .catch-en__lg > .catch-inner {
-    font-size: 27px;
+    transform: translate(-50%, 380%);
+    font-size: 23.4px;
   }
 }
 .catch-en__md {
@@ -949,8 +977,11 @@ main {
   font-weight: 900;
   text-align: center;
 }
-.catch.font-md, .catch.popular__title, .copy.font-md, .copy.popular__title {
+.catch.font-md, .copy.font-md {
   margin-bottom: 0.5em;
+}
+.catch.top-catch, .copy.top-catch {
+  line-height: 1.3;
 }
 
 .copy {
@@ -1072,270 +1103,8 @@ main {
   color: #999;
 }
 
-.travel__inner {
-  position: relative;
-  z-index: 0;
-  justify-content: space-between;
-  background: #eaebe6;
-  padding: 15px;
-}
-@media screen and (min-width: 768px) {
-  .travel__inner {
-    padding: 50px;
-  }
-}
-@media screen and (min-width: 1471px) {
-  .travel__inner {
-    padding: 50px 150px;
-  }
-}
-.travel__img {
-  height: 300px;
-  transition: box-shadow 0.5s ease 1.6s;
-}
-.travel__img.inview {
-  box-shadow: inset 0 0 30px black;
-}
-@media screen and (min-width: 768px) {
-  .travel__img {
-    flex-basis: 47%;
-  }
-}
 @media screen and (min-width: 1024px) {
-  .travel__img {
-    height: 400px;
+  .appear-br-sm {
+    display: none;
   }
-}
-.travel__img > img {
-  position: relative;
-  z-index: -1;
-  opacity: 1;
-  -o-object-fit: cover;
-     object-fit: cover;
-  width: 100%;
-  height: 100%;
-}
-@media screen and (min-width: 768px) {
-  .travel__texts {
-    display: flex;
-    align-items: flex-end;
-    flex-basis: 47%;
-  }
-}
-.travel__texts.inview .travel__title::before {
-  animation-name: scaleX;
-  animation-duration: 0.3s;
-  animation-timing-function: ease;
-  animation-delay: 1.5s;
-  animation-iteration-count: 1;
-  animation-direction: normal;
-  animation-fill-mode: forwards;
-}
-.travel__title {
-  position: relative;
-}
-.travel__title::before {
-  display: none;
-  position: absolute;
-  content: "";
-  height: 1px;
-  width: 100px;
-  top: 50%;
-  left: -120px;
-  background: black;
-  transform: scaleX(0);
-  transform-origin: right;
-}
-@media screen and (min-width: 1024px) {
-  .travel__title::before {
-    display: block;
-  }
-}
-@media screen and (min-width: 1024px) {
-  .travel__description {
-    margin-bottom: 40px;
-  }
-}
-
-@keyframes scaleX {
-  0% {
-    transform: scaleX(0);
-  }
-  100% {
-    transform: scaleX(1);
-  }
-}
-@media screen and (min-width: 768px) {
-  .houses__item {
-    flex-basis: 50%;
-  }
-}
-@media screen and (min-width: 1024px) {
-  .houses__item {
-    margin-bottom: 60px;
-  }
-}
-.houses__btn {
-  text-align: center;
-  flex-basis: 100%;
-}
-
-.popular__inner {
-  position: relative;
-}
-.popular__inner::before {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  height: 90%;
-  width: 100%;
-  background: #eaebe6;
-}
-.popular__container {
-  position: relative;
-  z-index: 2;
-  justify-content: space-between;
-}
-@media screen and (min-width: 768px) {
-  .popular__item {
-    flex-basis: 47%;
-  }
-}
-@media screen and (min-width: 1024px) {
-  .popular__item {
-    flex-basis: 25%;
-  }
-}
-@media screen and (min-width: 1471px) {
-  .popular__item {
-    flex-basis: 23%;
-  }
-}
-.popular__img {
-  height: 150px;
-  margin-bottom: 5px;
-}
-@media screen and (min-width: 1024px) {
-  .popular__img {
-    height: 335px;
-  }
-}
-.popular__img > img {
-  width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-.popular__btn {
-  text-align: center;
-  flex-basis: 100%;
-}
-
-.footer {
-  padding: 60px 0;
-}
-.footer__nav {
-  justify-content: space-between;
-  align-items: center;
-  text-align: center;
-}
-.footer__ul {
-  list-style: none;
-  padding: 0;
-}
-.footer__li {
-  margin: 10px;
-}
-@media screen and (min-width: 768px) {
-  .footer__li {
-    margin-left: 0;
-    margin-right: 30px;
-  }
-}
-.footer__li > a {
-  color: #535353;
-  text-decoration: none;
-}
-.footer > .logo {
-  font-size: 38px;
-  justify-content: center;
-}
-@media screen and (min-width: 768px) {
-  .footer > .logo {
-    justify-content: flex-start;
-  }
-}
-
-.logo {
-  font-size: 42px;
-  display: flex;
-}
-.logo__img {
-  width: 0.7em;
-}
-.logo__world {
-  color: #904669;
-}
-
-.side {
-  display: none;
-  position: fixed;
-  top: 70%;
-  transform: translateY(-50%);
-  transition: all 0.3s ease;
-}
-@media screen and (min-width: 1471px) {
-  .side {
-    display: block;
-  }
-}
-.side .tween-animate-title {
-  color: black;
-  text-decoration: none !important;
-  margin: 0 40px;
-  vertical-align: middle;
-  letter-spacing: 2px;
-}
-.side.left {
-  left: -50px;
-}
-.side.left.inview {
-  left: 50px;
-}
-.side.left .side__inner {
-  transform-origin: top left;
-  transform: rotate(-90deg);
-}
-.side.right {
-  right: -50px;
-}
-.side.right.inview {
-  right: 50px;
-}
-.side.right .side__inner {
-  transform-origin: top right;
-  transform: rotate(90deg);
-}
-
-.icon {
-  position: relative;
-}
-.icon::before {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: -20px;
-  width: 1em;
-  height: 1em;
-  transform: translateY(-50%);
-  background-position: center;
-  background-repeat: none;
-  background-size: contain;
-}
-.icon.twitter::before {
-  background-image: url(../images/twitter.svg);
-}
-.icon.fb::before {
-  background-image: url(../images/facebook.svg);
 }/*# sourceMappingURL=style.css.map */
