@@ -645,6 +645,25 @@
   transform: translateY(-11px) rotate(-135deg);
 }
 
+.cormorant-garamond-font {
+  font-family: "Cormorant Garamond", serif;
+}
+
+.noto-serif-jp-font {
+  font-family: "Noto Serif JP", serif;
+}
+
+.zen-antique-font {
+  font-family: "Zen Antique", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.eb-garamond-font {
+  font-family: "EB Garamond", serif;
+  font-style: normal;
+}
+
 body {
   font-size: 93.75%;
   font-family: "Cormorant Garamond", "Noto Serif JP", serif;
@@ -769,6 +788,7 @@ main {
   width: 100%;
   height: 100vh;
   will-change: transform;
+  overflow: hidden;
 }
 .panel.intro {
   background-color: unset;
@@ -780,7 +800,7 @@ main {
   background-clip: border-box;
   color: inherit;
   justify-content: flex-start;
-  padding-top: 10vh;
+  padding-top: 11vh;
 }
 @media screen and (min-width: 1024px) {
   .panel.intro {
@@ -881,9 +901,7 @@ main {
 }
 
 .logo-sm {
-  font-family: "Times New Roman", Times, serif;
-  font-size: 0.7em;
-  vertical-align: -7px;
+  font-size: 0.5em;
 }
 
 .wrapper {
@@ -925,14 +943,14 @@ main {
 }
 .catch-en__lg {
   position: relative;
-  font-size: 90px;
+  font-size: 85px;
   line-height: 1;
   text-align: center;
-  color: #999;
+  color: #aaa;
 }
 @media screen and (min-width: 1024px) {
   .catch-en__lg {
-    font-size: 162px;
+    font-size: 153px;
   }
 }
 .catch-en__lg.focus {

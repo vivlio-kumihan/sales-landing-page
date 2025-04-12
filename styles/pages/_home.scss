@@ -26,10 +26,11 @@ main {
   width: 100%;
   height: 100vh;
   will-change: transform;
+  overflow: hidden;
   &.intro {
     @include bg($image: "../images/bg_1_sm.jpg");
     justify-content: flex-start;
-    padding-top: 10vh;
+    padding-top: 11vh;
     @include mq(lg) {
       @include bg($image: "../images/bg_1_lg.png");
       padding-top: 10vh;
@@ -74,10 +75,8 @@ main {
 }
 
 .logo-sm {
-  font-family: 'Times New Roman', Times, serif;
-  // font-family: "Noto Serif JP", serif;  
-  font-size: .7em;
-  vertical-align: -7px;
+  font-size: .5em;
+  // vertical-align: 0px;
 }
 
 .wrapper {
@@ -114,12 +113,12 @@ main {
   font-family: "Cormorant Garamond", serif;
   &__lg {
     position: relative;
-    font-size: 90px;
+    font-size: 85px;
     line-height: 1;
     text-align: center;
-    color: #999;
+    color: #aaa;
     @include mq(lg) {
-      font-size: calc(90px * 1.8);
+      font-size: calc(85px * 1.8);
     }
     &.focus {
       margin-bottom: 15px;
